@@ -1,0 +1,4 @@
+-- DROP (delete) ALL TABLES
+
+DROP TABLE IF EXISTS user_profile CASCADE;
+DROP TABLE IF EXISTS article CASCADE;
