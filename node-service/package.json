@@ -1,0 +1,16 @@
+{
+  "name": "node-service",
+  "version": "1.0.0",
+  "description": "Example node-postgreSQL microservice.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "keywords": [
+    "node",
+    "microservice",
+    "postgres"
+  ],
+  "author": "David J. Cunningham <david@cunningdj.com>",
+  "license": "ISC"
+}
