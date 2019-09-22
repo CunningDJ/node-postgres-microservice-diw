@@ -15,3 +15,15 @@ There are three directories:
   extensions need to be established.
 * `lib`, which contains supporting scripts for `init_dbs.sh` which could also
   be used to supplement other `main` scripts as needed.
+
+## TL;DR
+This structure can be useful for setting up and automating the setup of
+postgres on any project. 
+The whole database and tables can be initialized or re-initialized by running `./main/init_dbs.sh`.
+The only files that need to be changed are:
+
+* Changing the database name to whatever you want in the `main/db_name.txt` file.
+* Whatever table `.sql` schema you want in `schema/`, and adding the files in appropriate order (based on foreign key dependencies) to `schema/create_table_order.txt`.
+* Adding the above tables as they're added to `lib/drop_tables.sql` to ensure
+  that they're cleaned out if/when you want to, or to control which if any are
+  acutally dropped when drop is chosen in the `init_dbs.sh` process.
