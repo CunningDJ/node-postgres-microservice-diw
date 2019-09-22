@@ -1,7 +1,9 @@
 # Node-Postgres Microservice: Database Portion
 This is the part of the node postgres microservice where the table schema for the
 database are defined, as well as all of the automation scripts for
-initializing the database, tables, and relevant extensions.
+initializing the database, tables, and relevant extensions.  The full
+discussion of this project can be found at [this Dabbling In Web
+article](https://web.dabblingin.com/p/microservice-nodejs-postgresql).
 
 ## Structure
 There are three directories:
