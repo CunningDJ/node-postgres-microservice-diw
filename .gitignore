@@ -1,0 +1,8 @@
+*node_modules/
+*.swp
+
+" DB
+db/db-pass.txt
+
+" NODE-SERVICE
+node-service/src/db-pass.txt
