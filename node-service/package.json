@@ -12,5 +12,9 @@
     "postgres"
   ],
   "author": "David J. Cunningham <david@cunningdj.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^7.12.1"
+  }
 }
