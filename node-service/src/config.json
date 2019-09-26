@@ -1,0 +1,9 @@
+{
+  "httpPort": 80,
+  "httpsPort": 443,
+  "db": {
+    "host": "localhost",
+    "user": "postgres",
+    "database": "node_postgres_microservice_db"
+  }
+}
