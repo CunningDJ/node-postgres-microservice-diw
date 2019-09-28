@@ -1,6 +1,5 @@
 {
-  "httpPort": 80,
-  "httpsPort": 443,
+  "httpPort": 8080,
   "db": {
     "host": "localhost",
     "user": "postgres",

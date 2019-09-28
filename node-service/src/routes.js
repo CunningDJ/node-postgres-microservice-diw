@@ -32,7 +32,6 @@ function logErrorAndReturnGeneric(err) {
  * Article data routes
  */
 articleRouter.get('/all', function(req, res, next) {
-  // TODO: getAllArticles
   // Querying the database
   db.getAllArticles((err, data) => {
     err = logErrorAndReturnGeneric(err);
@@ -44,7 +43,6 @@ articleRouter.get('/all', function(req, res, next) {
 
 articleRouter.get('/id/:articleId', function(req, res, next) {
   const { articleId } = req.params;
-  // TODO: getArticleById
   // Querying the database
   db.getArticleById(articleId, (err, data) => {
     err = logErrorAndReturnGeneric(err);
@@ -56,7 +54,6 @@ articleRouter.get('/id/:articleId', function(req, res, next) {
 
 articleRouter.get('/username/:username', function(req, res, next) {
   const { username } = req.params
-  // TODO: getArticlesByUsername
   // Querying the database
   db.getArticlesByUsername(username, (err, data) => {
     err = logErrorAndReturnGeneric(err);
@@ -72,7 +69,6 @@ articleRouter.get('/username/:username', function(req, res, next) {
  */
 userRouter.get('/username/:username', function(req, res, next) {
   const { username } = req.params;
-  // TODO: getUserByUsername
   // Querying the database
   db.getUserByUsername(username, (err, data) => {
     err = logErrorAndReturnGeneric(err);
