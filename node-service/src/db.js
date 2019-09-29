@@ -90,7 +90,7 @@ const GET_ARTICLES_BY_USERNAME_QUERY = `
     a.title as title,
     a.description as description,
     a.content as content,
-    a.create_at as "createdAt"
+    a.created_at as "createdAt"
   FROM article a
   INNER JOIN user_profile u
     ON (a.author_id = u.id)
