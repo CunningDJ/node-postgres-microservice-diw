@@ -15,5 +15,5 @@ And finally, the [test/](test/) folder contains integration test scripts for hit
 
 A full explanation of this project can be found at [this Dabbling In Web
 article](https://web.dabblingin.com/p/microservice-nodejs-postgresql).
-You can also find a more summary of each portion (`db/` and
-`node-service/`) in the READMEs of their respective folders.
+You can also find a more summary of each portion (`db/`,
+`node-service/`, `mock-seed/` and `test/`) in the READMEs of their respective folders.
