@@ -5,6 +5,9 @@ initializing the database, tables, and relevant extensions.  The full
 discussion of this project can be found at [this Dabbling In Web
 article](https://web.dabblingin.com/p/microservice-nodejs-postgresql).
 
+## Steps
+1. Run `./main/init_dbs.sh`
+
 ## Structure
 There are three directories:
 * `schema`, where the schema of the tables (`*.sql`) and the ordering of the
@@ -16,10 +19,9 @@ There are three directories:
 * `lib`, which contains supporting scripts for `init_dbs.sh` which could also
   be used to supplement other `main` scripts as needed.
 
-## TL;DR
+## Key Notes
 This structure can be useful for setting up and automating the setup of
-postgres on any project. 
-The whole database and tables can be initialized or re-initialized by running `./main/init_dbs.sh`.
+postgres on any project.
 The only files that need to be changed are:
 
 * Changing the database name to whatever you want in the `main/db_name.txt` file.
