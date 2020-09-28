@@ -4,7 +4,7 @@ instructionally, as a Hello World for creating such a service, or as
 a boilerplate starting point.
 
 A full explanation of this project can be found at [this Dabbling In Web
-article](https://web.dabblingin.com/p/microservice-nodejs-postgresql).
+article](https://web.dabbling.in/p/microservice-nodejs-postgresql).
 You can also find a more summary of each portion (`db/`,
 `node-service/`, `mock-seed/` and `test/`) in the READMEs of their respective folders.
 
