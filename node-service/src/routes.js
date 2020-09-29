@@ -12,9 +12,9 @@ const articleRouter = Router();
 const userRouter = Router();
 
 // We further nest the /article/.. subpaths with the articleRouter object
-router.use('/article', articleRouter);
+router.use('/articles', articleRouter);
 // ... and similarly the /user/.. subpaths with userRouter
-router.use('/user', userRouter);
+router.use('/users', userRouter);
 
 
 /*
@@ -29,20 +29,29 @@ function logErrorAndReturnGeneric(err) {
 }
 
 /*
- * Article data routes
+ * Article routes
  */
-articleRouter.get('/all', function(req, res, next) {
+articleRouter.get('/', (req, res, next) => {
   // GET all articles
+  const { username } = req.query;
   // Querying the database
-  db.getAllArticles((err, data) => {
-    err = logErrorAndReturnGeneric(err);
-    // Sending the JSON with data and/or error message back to the client
-    return res.json({ err, data });
-  });
+  if (username) {
+    db.getArticlesByUsername(username, (err, data) => {
+      err = logErrorAndReturnGeneric(err);
+      // Sending the JSON with data and/or error message back to the client
+      return res.json({ err, data });
+    });
+  } else {
+    db.getAllArticles((err, data) => {
+      err = logErrorAndReturnGeneric(err);
+      // Sending the JSON with data and/or error message back to the client
+      return res.json({ err, data });
+    });
+  }
 })
 
 
-articleRouter.get('/id/:articleId', function(req, res, next) {
+articleRouter.get('/:articleId', (req, res, next) => {
   // GET article data by article ID
   const { articleId } = req.params;
   // Querying the database
@@ -54,24 +63,10 @@ articleRouter.get('/id/:articleId', function(req, res, next) {
 })
 
 
-articleRouter.get('/username/:username', function(req, res, next) {
-  // GET articles by author username
-  const { username } = req.params
-  // Querying the database
-  db.getArticlesByUsername(username, (err, data) => {
-    err = logErrorAndReturnGeneric(err);
-    // Sending the JSON with data and/or error message back to the client
-    return res.json({ err, data });
-  });
-})
-
-
-
 /*
- * User data routes
+ * User routes
  */
-
-userRouter.get('/username/:username', function(req, res, next) {
+userRouter.get('/:username', (req, res, next) => {
   // GET user data by username
   const { username } = req.params;
   // Querying the database
@@ -81,6 +76,17 @@ userRouter.get('/username/:username', function(req, res, next) {
     return res.json({ err, data });
   });
 })
+
+userRouter.get('/:username/articles', (req, res, next) => {
+  // GET articles by a given author
+  const { username } = req.params
+  // Querying the database
+  db.getArticlesByUsername(username, (err, data) => {
+    err = logErrorAndReturnGeneric(err);
+    // Sending the JSON with data and/or error message back to the client
+    return res.json({ err, data });
+  });
+});
 
 
 // exporting the router with all the routes contained, for use by the
